@@ -23,6 +23,10 @@ const main = async () => {
   client.on("ready", () => {
     console.log(`Logged in as ${client.user?.tag}!`);
   });
+
+  client.on("guildMemberAdd", (member) => {
+    console.log(`${member.user.tag} has joined the server!`);
+  });
 };
 
 main();
