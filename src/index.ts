@@ -2,11 +2,14 @@ import process from "process";
 import dotenv from "dotenv-flow";
 import Discord, { Client, GatewayIntentBits } from "discord.js";
 import CHANNELS from "./constants/channels";
+import { checkAPI } from "./checkApi";
 
 dotenv.config({
   default_node_env: "development",
   silent: true,
 });
+
+const interval = 1000; // Intervalle de vérification en millisecondes (par exemple, toutes les 60 secondes)
 
 const main = async () => {
   try {
@@ -56,6 +59,10 @@ const main = async () => {
     });
 
     client.login(token);
+
+    setInterval(() => {
+      checkAPI(client);
+    }, interval);
   } catch (error) {
     console.log(error);
   }
