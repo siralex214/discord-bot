@@ -9,7 +9,7 @@ dotenv.config({
   silent: true,
 });
 
-const interval = 1000; // Intervalle de vérification en millisecondes (par exemple, toutes les 60 secondes)
+const interval = 10000; // Intervalle de vérification en millisecondes (par exemple, toutes les 60 secondes)
 
 const main = async () => {
   try {

@@ -2,7 +2,6 @@ import axios from "axios";
 import { Client } from "discord.js";
 
 export const checkAPI = async (client: Client) => {
-
   const user = await client.users.fetch(
     process.env.MY_ID_DISCORD ? process.env.MY_ID_DISCORD : ""
   );
