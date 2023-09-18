@@ -12,12 +12,8 @@ export const checkAPI = async (client: Client) => {
   if (newDataAvailable(response.data)) {
     const suggestion = newDataAvailable(response.data);
 
-    // user?.send(
-    //   `Nouvelle suggestion de ${suggestion.username} : ${suggestion.title}`
-    // );
-
     user?.send(
-      `Wesh petit con de tes morts`
+      `Nouvelle suggestion de ${suggestion.username} : ${suggestion.title}`
     );
   }
 };
